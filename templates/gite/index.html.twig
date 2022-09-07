@@ -1,0 +1,201 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos gîtes
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css" integrity="sha256-5veQuRbWaECuYxwap/IOE/DAwNxgm4ikX7nrgsqYp88=" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{asset('css/calendar.css')}}">
+	<style>
+		body {
+			background-image: unset;
+		}
+
+		#home-footer a,
+		#copy-footer {
+			color: darkgreen;
+		}
+
+		main {
+			margin-bottom: 20vh;
+
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	{% include "_partials/_nav.html.twig" %}
+	<div id="gites">
+		<div class="card">
+			<a href="#" data-bs-toggle="modal" data-bs-target="#giteModal" title="Voir photos">
+				<img src="{{asset('img/gite11-1.jpg')}}" class="card-img-top" alt="Photo du gîte">
+			</a>
+			<div class="card-body">
+				<h5 class="card-title">Gîte 11 places</h5>
+				<div class="card-text">
+					<div class="infos">
+						<div class="infos-links">
+							<a class="btn btn-outline-success price" href="{{ asset('uploads/files/tarif.pdf') }}" target="_blank" aria-label="Tarifs">Tarifs</a>
+							<a class="btn btn-outline-success price" href="{{ asset('uploads/files/infos.pdf') }}" target="_blank" aria-label="Plus d'informations" style="margin-top: 1vh">+ Infos</a>
+						</div>
+						<div>
+							<p class="card-infos">
+								<i class="fa-solid fa-bed"></i>
+								3 lits simples</p>
+							<p class="card-infos">
+								<i class="fa-solid fa-bed"></i>
+								5 lits doubles</p>
+						</div>
+					</div>
+					<p class="card-presentation">La longère est en deux parties : la deuxième peut accueillir neuf personnes (+2).
+														                                            Les deux parties de la longère peuvent communiquer par l'avant.
+					</p>
+				</div>
+				<div class="card-btn">
+					<a href="mailto:bjouain@aol.com" class="btn btn-secondary" {# data-bs-toggle="modal" data-bs-target="#contactModal" #} aria-label="Contacter">Nous contacter</a>
+				</div>
+			</div>
+			<div id="calendar"></div>
+		</div>
+		<div class="card">
+			<a href="#" data-bs-toggle="modal" data-bs-target="#giteModal1" title="Voir photos">
+				<img src="{{asset('img/gite15-1.jpg')}}" class="card-img-top" alt="Photo du gîte">
+			</a>
+			<div class="card-body">
+				<h5 class="card-title">Gîte 14 places</h5>
+				<div class="card-text">
+					<div class="infos">
+						<div class="infos-links">
+							<a class="btn btn-outline-success price" href="{{ asset('uploads/files/tarif.pdf') }}" target="_blank" aria-label="Tarifs">Tarifs</a>
+							<a class="btn btn-outline-success price" href="{{ asset('uploads/files/infos.pdf') }}" target="_blank" aria-label="Plus d'informations" style="margin-top: 1vh">+ Infos</a>
+						</div>
+						<div>
+							<p class="card-infos">
+								<i class="fa-solid fa-bed"></i>
+								4 lits simples</p>
+							<p class="card-infos">
+								<i class="fa-solid fa-bed"></i>
+								6 lits doubles</p>
+						</div>
+					</div>
+					<p class="card-presentation">La longère est en deux parties : la première peut accueillir quatorze personnes.
+														                                            Les deux parties de la longère peuvent communiquer par l'avant.
+					</p>
+				</div>
+				<div class="card-btn">
+					<a href="mailto:bjouain@aol.com" class="btn btn-secondary" {# data-bs-toggle="modal" data-bs-target="#contactModal" #} aria-label="Contacter">Nous contacter</a>
+				</div>
+			</div>
+			<div id="calendar2"></div>
+		</div>
+	</div>
+
+	<!-- Modal Gite 11-->
+	<div class="modal fade" id="giteModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body" style="padding: 0">
+					<div id="carouselGite" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner">
+
+							{% for pic1 in pic1 %}
+								<div class="carousel-item {% if loop.index == 1 %}active{% endif %} carousel-loop">
+									<img src="{{asset('img/gite11/' ~ pic1.title)}}" class="d-block w-100" alt="Photos {{pic1.gite.name}}" style="border-radius: 0">
+								</div>
+							{% endfor %}
+
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselGite" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Précédent</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselGite" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Suivant</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal Gite 14-->
+	<div class="modal fade" id="giteModal1" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body" style="padding: 0">
+					<div id="carouselGite1" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner">
+
+							{% for pic2 in pic2 %}
+								<div class="carousel-item {% if loop.index == 1 %}active{% endif %} carousel-loop">
+									<img src="{{asset('img/gite14/' ~ pic2.title)}}" class="d-block w-100" alt="Photos {{pic2.gite.name}}" style="border-radius: 0">
+								</div>
+							{% endfor %}
+
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselGite1" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Précédent</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselGite1" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Suivant</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% include "_partials/_footer.html.twig" %}
+{% endblock %}
+
+{% block javascripts %}
+	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js" integrity="sha256-YicH/8aE660iEnJtgll3vT54dJApy3XkYmqNfGVFEzA=" crossorigin="anonymous"></script>
+
+	{{ parent() }}
+
+	<script>
+        // Redirection en fction écran
+        if (screen.width >= 768) {
+            window.location.href = '{{path('app_main')}}';
+        }
+
+		window.onload = () => {
+        let calendarElt = document.querySelector("#calendar")
+        let calendar = new FullCalendar.Calendar(calendarElt, {
+        initialView: 'dayGridMonth',
+        showNonCurrentDates: false,
+        firstDay: 1,
+        locale: 'fr',
+        timeZone: 'Europe/Paris',
+        headerToolbar: {
+        start: 'prev',
+        center: 'title',
+        end: 'next'
+        },
+        events: {{ data|raw }}
+
+        })
+        calendar.render();
+
+        let calendarElt2 = document.querySelector("#calendar2")
+        let calendar2 = new FullCalendar.Calendar(calendarElt2, {
+        initialView: 'dayGridMonth',
+        showNonCurrentDates: false,
+        firstDay: 1,
+        locale: 'fr',
+        timeZone: 'Europe/Paris',
+        headerToolbar: {
+        start: 'prev',
+        center: 'title',
+        end: 'next'
+        },
+        events: {{ data2|raw }}
+
+        })
+        calendar2.render()
+        }
+	</script>
+{% endblock %}

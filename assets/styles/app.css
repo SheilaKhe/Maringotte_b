@@ -1,0 +1,492 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+
+/* CONFIG */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0 auto;
+    /* font-size: 3vw; */
+}
+
+main {
+    min-height: 100%;
+}
+
+main::after {
+    content: "";
+    display: block;
+}
+
+body {
+    background-image: url('../../public/img/maringotte/juju.02.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* 01 - HOME */
+/* 01.a - Main */
+#pc-display {
+    display: none;
+}
+#home-phone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15vh;
+}
+
+#home-phone a {
+    background-color: rgba(0, 0, 0, 0.392);
+    padding: 1vh 0;
+    color: white;
+    width: 38vw;
+    text-align: center;
+    margin-top: 5vh;
+    text-decoration: none;
+}
+
+#home-phone a :hover {
+    color: lightgray;
+}
+
+#home-phone .logo {
+    width: 50vw;
+    margin: 10vh;
+}
+
+/* 01.b - Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10vh;
+}
+
+footer hr {
+    background-color: white;
+    padding: 3px;
+    margin: 2vh 6vw;
+}
+
+#home-footer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3vh;
+}
+
+ #home-footer a{
+    text-decoration: none;
+    color: white;
+}
+
+#copy-footer {
+    color: white;
+    text-align: center;
+    font-size: 3vw;
+}
+
+/* 02 - Maringotte */
+/* 02.a - Nav */
+#navigation {
+    width: 100%;
+    padding: 2vh 4vw;
+    background-color: rgba(49, 109, 33, 0.186);
+}
+
+#navigation img {
+    width: 28vw;
+}
+
+#navigation .list-group-item {
+    list-style-type: none;
+}
+
+.list-group-item a {
+    color: rgb(58, 128, 39);
+    text-decoration: none;
+}
+
+.list-group-item a :hover {
+    color: rgb(49, 109, 33);
+    text-decoration: underline;
+}
+
+/* 02.b - Main */
+#story {
+    border: solid 1px rgb(96, 156, 96);
+    margin: 0 15vw;
+    margin-top: 15vh;
+    padding: 6vw;
+    text-align: justify;
+}
+
+#story h2 {
+    text-align: center;
+    padding: 2vh 0;
+}
+
+.splide {
+    margin: 8vh 0;
+    z-index: -1;
+}
+
+.splide__slide {
+    border: solid 2px #285f51;
+}
+
+.maps {
+    text-align: center;
+    margin: 10vh 0;
+}
+
+#maps iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* 03 - GÎTES */
+/* 03.a - Main */
+#gites {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 12vh 10vw;
+    margin-bottom: 25vh;
+}
+
+#gites .card-title, .card-infos {
+    text-align: center;
+}
+
+#gites .card {
+    margin: 5vh 0;
+}
+
+.card-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-btn a {
+    width: 30vw;
+    margin: 1vh 0;
+    padding: 2vw;
+}
+
+.infos-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-around;
+}
+
+#gites .card-text {
+    text-align: justify;
+    margin: 2vh 0;
+}
+
+.card-presentation {
+    padding: 3vw;
+}
+
+/* 04 - LOGIN */
+#login-form {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    margin: 20vh 10vw;
+    border: solid 1px lightgrey;
+    padding: 5vw;
+    background-color: rgba(255, 255, 255, 0.536);
+}
+
+#login-form input {
+    margin: 1vh 0;
+}
+
+
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 768px) {
+    /* A - HOME */
+    body {
+        background-image: none;
+    }
+    #home-phone {
+        display: none;
+    }
+    /* A.1 - Header */
+    #pc-display {
+        display: block;
+    }
+
+    #home-header a {
+        color: white;
+        text-decoration: none;
+        font-size: medium;
+    }
+
+    #home-header #logo {
+        width: 10vw;
+    }
+
+    #navigation {
+        background-color: rgba(8, 8, 8, 0.423);
+        position: absolute; 
+   }
+
+    #main-img {
+        width: 100%;
+    }
+
+    #main-nav {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 43vh;
+        margin: 0 7vw;
+        text-align: center;
+    }
+
+    .nav-btn {
+        background-color: rgba(0, 0, 0, 0.61);
+        color: white;
+        padding: 1vh 3vw;
+        width: 25vw;
+        margin: 0 2vw;
+    }
+
+    /* A.2 - Main */
+    #home {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #presentation, #citation {
+        font-family: 'Cookie', cursive;
+    }
+    #presentation {
+        border: double 7px #1B4037;
+        margin: 10vh 6vw;
+        padding: 3vw;
+        font-size: 4vh;
+        font-size: 2.5vw;
+    }
+
+    #gites {
+        margin: 10vh 6vw;
+        flex-direction: row;
+    }
+
+    #gites .card {
+        margin: 0 2vw;
+        z-index: inherit;
+    }
+
+    
+    .card-btn a {
+        padding: 1vw;
+        width: 18vw;
+    }
+   
+    .infos-links a {
+        width: 10vw;
+    }
+    
+    #citation {
+        display: block;
+        border: solid 1px lightgrey;
+        padding: 1vw;
+        margin: 4vh 10vw;
+        color: #1B4037;
+        font-size: 2.5vw;
+    }
+
+    #citation p {
+        text-align: right;
+        margin: 3vh 0;
+    }
+
+    #location {
+        display: flex;
+        justify-content: space-between;
+        background-color: #2e5e52a6;
+        margin: 10vh 6vw;
+        padding: 3vw;
+    }
+
+    #adress {
+        padding: 0 2vw;
+       
+    }
+
+    #up {
+        display: inline-block;
+        position: fixed;
+        right: 1vw;
+        bottom: 15vh;
+        transition: background-color .3s, opacity .5s, visibility .5s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+        color: #285f51;
+        font-size: 2vw;
+        border: solid 1px #285f51;
+        border-radius: 2vw;
+        padding: 1vh 1vw;
+    }
+
+
+    #up:hover {
+        color: #1B4037;
+    }
+
+    #up.show{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* A.3 - Footer */
+    #phone-footer {
+        display: none;
+    }
+
+    footer {
+        position: unset;
+    }
+    #footer-pc {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: #1B4037;
+        color: white;
+        margin-top: 60vh;
+    }
+
+    #head-footer {
+        display: flex;
+        background-color: rgba(128, 128, 128, 0.692);
+    }
+
+    #head-footer hr {
+        width: 1px;
+        height: 68px;
+        color: black;
+    }
+
+    .footer-item {
+        display: flex;
+        justify-content: space-around;
+/*         border: solid 1px grey;
+ */        padding: 0 2vw;
+        width: 34vw;
+        align-items: center;
+        font-size: small;
+    }
+
+    .footer-item a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .footer-icon {
+        font-size: 3vw;
+    }
+
+    .link-slide {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: auto;
+        margin: 0 3vw;
+        margin-bottom: 8vh;
+        width: 33vw;
+        padding-bottom: 1vh;
+    }
+    
+    .link-slide img {
+        border-radius: 2vw;
+        margin: 0 1vw;
+        height: 100%;
+    }
+
+    .link-slide::-webkit-scrollbar {
+        height: 1vh;
+        background-color: #1B4037;
+    }
+
+    .link-slide::-webkit-scrollbar-track {
+        background-color: lightgrey;
+    }
+
+    .link-slide::-webkit-scrollbar-thumb {
+        background-color: #285f51;
+    }
+    #footer-links {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 6vh 2vw;
+    }
+
+    .links-item img {
+        width: 8vw;
+    }
+
+    .links-item h6 {
+        text-align: center;
+        margin: 3vh 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    /* Header */
+    #main-nav {
+        top: 62vh;
+    }
+
+    /* Main */
+   
+
+    .splide {
+        margin: 14vh 10vw;
+    }
+
+    #maps iframe {
+        width: 40vw;
+        height: 50vh;
+    
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #main-nav {
+        top: 70vh;
+    }
+
+    #presentation, #citation {
+        font-size: 2vw;
+    }
+    #footer-links {
+        padding: 2vh 2vw;
+    }
+
+}
+
+@media screen and (min-width: 1400px) {
+    #main-nav {
+        top: 82vh;
+    }
+
+}

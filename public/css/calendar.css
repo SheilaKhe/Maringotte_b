@@ -1,0 +1,46 @@
+/* MAIN */
+
+#calendar, #calendar2 {
+    border: solid 1px lightgrey;
+    border-radius: 2vw;
+    padding: 2vw;
+    margin: 3vh 0 ;
+    
+}
+
+.cal-title {
+    margin-top: 15vh;
+    text-align: center;
+}
+
+.fc .fc-daygrid-day-number {
+    text-decoration-line: none;
+    color: grey;
+}
+
+.fc .fc-daygrid-day-top {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.fc .fc-col-header-cell-cushion {
+    color: #518050;
+    text-decoration: none;
+}
+
+.fc .fc-button-primary {
+    color: #518050;
+    background-color: transparent;
+    border: none;
+}
+
+.fc .fc-bgevent {
+    background-color: #518050;
+}
+
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+    min-height: 1.5em;
+}
+
+
+

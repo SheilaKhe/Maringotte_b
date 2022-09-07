@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'histoire de la Maringotte{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background-image: unset;
+        }
+
+        #home-footer a, #copy-footer{
+            color: darkgreen;
+        }
+
+        main {
+            margin-bottom: 20vh;
+
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+{% include "_partials/_nav.html.twig" %}
+<main>
+    <div id="story" class="container"> 
+        <h2>La Maringotte</h2>
+        <p>La Maringotte de Brocéliande est une longère de schiste rouge datant de 1784 remplie d'histoire.
+                Entièrement rénovée, elle peut accueillir jusqu'à 25 personnes. Un parc arboré et son étang
+                vous permettront de vous relaxer. Et pour les petits voyageurs, une aire de jeux. </p>    
+    </div>
+    <section class="splide" aria-label="Slider du domaine">
+        <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img src="{{asset('img/maringotte/01.jpg')}}" class="d-block w-100" alt="Photos du gîte">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset('img/maringotte/02.jpg')}}" class="d-block w-100" alt="Photos du gîte">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset('img/maringotte/03.jpg')}}" class="d-block w-100" alt="Photos du gîte">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset('img/maringotte/juju.01.jpg')}}" class="d-block w-100" alt="Photos du gîte">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset('img/maringotte/05.jpg')}}" class="d-block w-100" alt="Photos du gîte">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset('img/maringotte/06.jpg')}}" class="d-block w-100" alt="Photos du gîte">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset('img/maringotte/07.jpg')}}" class="d-block w-100" alt="Photos du gîte">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset('img/maringotte/08.jpg')}}" class="d-block w-100" alt="Photos du gîte">
+                    </li>
+                    
+                </ul>
+        </div>
+    </section>
+    <div id="maps" class="maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2666.93306793272!2d-2.2017952849769173!3d48.05363006498405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480fadd4d329ead3%3A0x2d8596482d712ea8!2sMaringotte%20de%20Broc%C3%A9liande!5e0!3m2!1sfr!2sbe!4v1662369396183!5m2!1sfr!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</main>
+{% include "_partials/_footer.html.twig" %}
+{% endblock %}
+
+
+
+
